@@ -27,3 +27,13 @@ streamer = Streamer(port, require_login)
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--url", required=True,
+    help="video url")
+ap.add_argument("-p", "--period", type=float, default=5,
+    help="execution period")
+ap.add_argument("-o", "--output", required=False,
+    help="path to output video")
+ap.add_argument("-d", "--data", required=False,
+    help="path to output csv")
+ap.add_argument("-y", "--yolo", required=True,
+    help="base path to yolov weights, cfg and coco directory")
+ap.add_argument("-c", "--confidence", type=float, default=0.4,
