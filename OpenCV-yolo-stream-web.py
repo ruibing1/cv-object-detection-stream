@@ -21,3 +21,9 @@ from flask_opencv_streamer.streamer import Streamer
 
 # port stream settings
 port = 4455
+require_login = False
+streamer = Streamer(port, require_login)
+
+# construct the argument parse and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-u", "--url", required=True,
