@@ -37,3 +37,16 @@ ap.add_argument("-d", "--data", required=False,
 ap.add_argument("-y", "--yolo", required=True,
     help="base path to yolov weights, cfg and coco directory")
 ap.add_argument("-c", "--confidence", type=float, default=0.4,
+    help="minimum probability to filter weak detections")
+ap.add_argument("-t", "--threshold", type=float, default=0.55,
+    help="threshold when applyong non-maxima suppression")
+args = vars(ap.parse_args())
+
+# set execution period 
+period = args["period"]
+
+# load the COCO class labels our YOLO model was trained on
+labelsPath = os.path.sep.join([args["yolo"], "coco.names"])
+LABELS = open(labelsPath).read().strip().split("\n")
+
+# initialize a list of colors to represent each possible class label
