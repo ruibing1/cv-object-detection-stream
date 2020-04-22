@@ -50,3 +50,10 @@ labelsPath = os.path.sep.join([args["yolo"], "coco.names"])
 LABELS = open(labelsPath).read().strip().split("\n")
 
 # initialize a list of colors to represent each possible class label
+np.random.seed(42)
+COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
+    dtype="uint8")
+
+# derive the paths to the YOLO weights and model configuration
+weightsPath = os.path.sep.join([args["yolo"], "yolov3.weights"])
+configPath = os.path.sep.join([args["yolo"], "yolov3.cfg"])
