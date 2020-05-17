@@ -64,3 +64,12 @@ print("Initializing...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 ln = net.getLayerNames()
 ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+
+url = args["url"]
+
+vPafy = pafy.new(url)
+play = vPafy.getbest(preftype="webm")
+streams = streamlink.streams(url)
+
+# set initial parameters
+writer = None
