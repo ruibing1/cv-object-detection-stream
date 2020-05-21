@@ -92,3 +92,11 @@ while True:
         break
 
     # if the frame dimensions are empty, grab them
+    if W is None or H is None:
+        (H, W) = frame.shape[:2]
+
+
+    # construct a blob from the input frame and then perform a forward
+    # pass of the YOLO object detector, giving us our bounding boxes
+    # and associated probabilities
+    blob = cv2.dnn.blobFromImage(frame, 1 / 255.0, (416, 416),
