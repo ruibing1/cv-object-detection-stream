@@ -85,3 +85,10 @@ while True:
     cap = cv2.VideoCapture(streams["best"].url)
     (grabbed,frame) = cap.read()
     #(grabbed, frame) = vs.read()
+
+    # if the frame was not grabbed, then we have reached the end
+    # of the stream
+    if not grabbed:
+        break
+
+    # if the frame dimensions are empty, grab them
