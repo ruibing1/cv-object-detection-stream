@@ -109,3 +109,12 @@ while True:
     # initialize our lists of detected bounding boxes, confidences,
     # and class IDs, respectively
     boxes = []
+    confidences = []
+    classIDs = []
+
+    # loop over each of the layer outputs
+    for output in layerOutputs:
+        # loop over each of the detections
+        for detection in output:
+            # extract the class ID and confidence (i.e., probability)
+            # of the current object detection
