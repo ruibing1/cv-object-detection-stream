@@ -100,3 +100,12 @@ while True:
     # pass of the YOLO object detector, giving us our bounding boxes
     # and associated probabilities
     blob = cv2.dnn.blobFromImage(frame, 1 / 255.0, (416, 416),
+        swapRB=True, crop=False)
+    net.setInput(blob)
+    start = time.time()
+    layerOutputs = net.forward(ln)
+    end = time.time()
+
+    # initialize our lists of detected bounding boxes, confidences,
+    # and class IDs, respectively
+    boxes = []
