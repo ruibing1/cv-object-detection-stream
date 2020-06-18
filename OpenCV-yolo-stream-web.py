@@ -148,3 +148,11 @@ while True:
     # bounding boxes
     idxs = cv2.dnn.NMSBoxes(boxes, confidences, args["confidence"],
         args["threshold"])
+
+    #set initial objects to 0
+    persons = 0
+    cars = 0
+    trucks = 0
+    busses = 0
+    # ensure at least one detection exists
+    if len(idxs) > 0:
