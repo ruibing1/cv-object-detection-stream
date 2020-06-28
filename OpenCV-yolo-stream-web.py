@@ -181,3 +181,15 @@ while True:
                   trucks+=1
                 if "{}".format(LABELS[classIDs[i]]) == "bus":
                   busses+=1
+    # construct a tuple of information we will be displaying on the frame
+    info = [
+        ("Busses", busses),
+        ("Trucks", trucks),
+        ("Cars", cars),
+        ("Persons", persons),   
+    ]
+    # loop over the info tuples and draw them on our frame
+    for (i, (k, v)) in enumerate(info):
+        text = "{}: {}".format(k, v)
+        cv2.putText(frame, text, (10, H - ((i * 30) + 30)),
+            cv2.FONT_HERSHEY_COMPLEX, 0.8, (255, 255, 255), 2)
