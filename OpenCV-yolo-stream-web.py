@@ -193,3 +193,16 @@ while True:
         text = "{}: {}".format(k, v)
         cv2.putText(frame, text, (10, H - ((i * 30) + 30)),
             cv2.FONT_HERSHEY_COMPLEX, 0.8, (255, 255, 255), 2)
+
+    # check if video output directory is given
+    if args["output"] is not None:
+        # check if the video writer is None
+        if writer is None:
+          # initialize our video writer
+          fourcc = cv2.VideoWriter_fourcc(*"MJPG")
+          writer = cv2.VideoWriter(args["output"], fourcc, 30,
+              (frame.shape[1], frame.shape[0]), True)
+        #write the output frame to disk
+        writer.write(frame)
+
+    # check if data output directory is given
