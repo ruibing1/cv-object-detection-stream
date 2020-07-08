@@ -231,3 +231,18 @@ while True:
 
     # wait, if period is not over jet
     time.sleep(period - ((time.time() - starttime) % period))
+    # show the output frame
+    # cv2.namedWindow("Frame", cv2.WINDOW_NORMAL)
+    frameR = cv2.resize(frame, (960, 540))
+    #cv2.imshow("Frame", frameR)
+    
+    #stream to port
+    streamer.update_frame(frameR)
+    if not streamer.is_streaming:
+        streamer.start_streaming()
+    cv2.waitKey(30)
+
+    frame_ind += 1
+
+    key = cv2.waitKey(1) & 0xFF
+    # if the `q` key was pressed, break from the loop
