@@ -217,3 +217,17 @@ while True:
         obj[frame_ind][6] = int(framedatetime)
         # save obj as csv every 10 frames
         if frame_ind % 10 == 0:
+          obj_df = pd.DataFrame(obj)
+          obj_df.columns = ['Frame', 'Objects', 'Persons', 'Cars', 'Trucks', 'Busses', 'DateTime']
+          obj_df.to_csv(args["data"])
+
+    # print object detection info 
+    print("frame: {:.0f}".format(int(frame_ind+1)), "   datetime:", str(framedatetime))
+    print("             persons: {:.0f}".format(int(persons)))
+    print("                cars: {:.0f}".format(int(cars)))
+    print("              trucks: {:.0f}".format(int(trucks)))
+    print("              busses: {:.0f}".format(int(busses)))
+    
+
+    # wait, if period is not over jet
+    time.sleep(period - ((time.time() - starttime) % period))
