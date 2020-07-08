@@ -246,3 +246,12 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
     # if the `q` key was pressed, break from the loop
+    if key == ord("q"):
+        break
+
+# check if data output directory is given
+if args["data"] is not None:
+    #save obj as csv 
+    obj_df = pd.DataFrame(obj)
+    obj_df.columns = ['Frame', 'Objects', 'Persons', 'Cars', 'Trucks', 'Busses', 'DateTime']
+    obj_df.to_csv(args["data"]) 
