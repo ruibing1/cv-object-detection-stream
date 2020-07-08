@@ -206,3 +206,14 @@ while True:
         writer.write(frame)
 
     # check if data output directory is given
+    if args["data"] is not None:
+        # write number of detections to array
+        obj[frame_ind][0] = int(frame_ind+1)
+        obj[frame_ind][1] = len(idxs)
+        obj[frame_ind][2] = int(persons)
+        obj[frame_ind][3] = int(cars)
+        obj[frame_ind][4] = int(trucks)
+        obj[frame_ind][5] = int(busses)
+        obj[frame_ind][6] = int(framedatetime)
+        # save obj as csv every 10 frames
+        if frame_ind % 10 == 0:
