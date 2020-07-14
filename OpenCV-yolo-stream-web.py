@@ -255,3 +255,6 @@ if args["data"] is not None:
     obj_df = pd.DataFrame(obj)
     obj_df.columns = ['Frame', 'Objects', 'Persons', 'Cars', 'Trucks', 'Busses', 'DateTime']
     obj_df.to_csv(args["data"]) 
+
+cv2.destroyAllWindows()
+
