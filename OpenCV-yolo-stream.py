@@ -20,3 +20,8 @@ import streamlink
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
+ap.add_argument("-u", "--url", required=True,
+    help="video url")
+ap.add_argument("-p", "--period", type=float, default=5,
+    help="execution period")
+ap.add_argument("-o", "--output", required=False,
