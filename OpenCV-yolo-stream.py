@@ -98,3 +98,12 @@ while True:
     net.setInput(blob)
     start = time.time()
     layerOutputs = net.forward(ln)
+    end = time.time()
+
+    # initialize our lists of detected bounding boxes, confidences,
+    # and class IDs, respectively
+    boxes = []
+    confidences = []
+    classIDs = []
+
+    # loop over each of the layer outputs
