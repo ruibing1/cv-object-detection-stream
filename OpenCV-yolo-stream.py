@@ -67,3 +67,14 @@ streams = streamlink.streams(url)
 
 # set initial parameters
 writer = None
+(W, H) = (None, None)
+starttime=time.time()
+frame_ind = 0
+obj = np.zeros((1000,7))
+# loop over frames from the video file stream
+while True:
+    # read the next frame from the file
+    framedatetime = datetime.datetime.now()
+    framedatetime = framedatetime.strftime('%Y%m%d%H%M%S')
+    cap = cv2.VideoCapture(streams["best"].url)
+    (grabbed,frame) = cap.read()
