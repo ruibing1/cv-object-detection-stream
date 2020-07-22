@@ -84,3 +84,17 @@ while True:
     # of the stream
     if not grabbed:
         break
+
+    # if the frame dimensions are empty, grab them
+    if W is None or H is None:
+        (H, W) = frame.shape[:2]
+
+
+    # construct a blob from the input frame and then perform a forward
+    # pass of the YOLO object detector, giving us our bounding boxes
+    # and associated probabilities
+    blob = cv2.dnn.blobFromImage(frame, 1 / 255.0, (416, 416),
+        swapRB=True, crop=False)
+    net.setInput(blob)
+    start = time.time()
+    layerOutputs = net.forward(ln)
