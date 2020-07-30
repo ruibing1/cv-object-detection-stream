@@ -129,3 +129,10 @@ while True:
 
                 # use the center (x, y)-coordinates to derive the top
                 # and and left corner of the bounding box
+                x = int(centerX - (width / 2))
+                y = int(centerY - (height / 2))
+
+                # update our list of bounding box coordinates,
+                # confidences, and class IDs
+                boxes.append([x, y, int(width), int(height)])
+                confidences.append(float(confidence))
