@@ -145,3 +145,17 @@ while True:
 
     #set initial objects to 0
     persons = 0
+    cars = 0
+    trucks = 0
+    busses = 0
+    # ensure at least one detection exists
+    if len(idxs) > 0:
+
+        # loop over the indexes we are keeping
+        for i in idxs.flatten():
+            # extract the bounding box coordinates
+            (x, y) = (boxes[i][0], boxes[i][1])
+            (w, h) = (boxes[i][2], boxes[i][3])
+
+            # check for specific objects
+            if ("{}".format(LABELS[classIDs[i]]) == "person") or ("{}".format(LABELS[classIDs[i]]) == "car") or ("{}".format(LABELS[classIDs[i]]) == "truck") or ("{}".format(LABELS[classIDs[i]]) == "bus"):
