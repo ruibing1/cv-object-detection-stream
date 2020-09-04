@@ -165,3 +165,14 @@ while True:
                 text = "{}: {:.4f}".format(LABELS[classIDs[i]],
                     confidences[i])
                 cv2.putText(frame, text, (x, y - 5),
+                    cv2.FONT_HERSHEY_COMPLEX, 0.5, color, 1)
+                # count specific objects
+                if "{}".format(LABELS[classIDs[i]]) == "person":
+                  persons+=1
+                if "{}".format(LABELS[classIDs[i]]) == "car":
+                  cars+=1
+                if "{}".format(LABELS[classIDs[i]]) == "truck":
+                  trucks+=1
+                if "{}".format(LABELS[classIDs[i]]) == "bus":
+                  busses+=1
+    # construct a tuple of information we will be displaying on the frame
