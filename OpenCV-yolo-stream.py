@@ -176,3 +176,8 @@ while True:
                 if "{}".format(LABELS[classIDs[i]]) == "bus":
                   busses+=1
     # construct a tuple of information we will be displaying on the frame
+    info = [
+        ("Busses", busses),
+        ("Trucks", trucks),
+        ("Cars", cars),
+        ("Persons", persons),   
