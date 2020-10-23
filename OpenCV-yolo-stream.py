@@ -228,3 +228,12 @@ while True:
     # cv2.namedWindow("Frame", cv2.WINDOW_NORMAL)
     frameR = cv2.resize(frame, (960, 540))
     cv2.imshow("Frame", frameR)
+
+    frame_ind += 1
+
+    key = cv2.waitKey(1) & 0xFF
+    # if the `q` key was pressed, break from the loop
+    if key == ord("q"):
+        break
+
+# check if data output directory is given
