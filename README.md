@@ -14,3 +14,10 @@ The main function of the project is to detect objects in a video stream and writ
 The starting point of this repository is the source code from the blog: https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/.
 
 ## YOLO Weights:
+The YOLOv3 weights can be downloaded using the command: `$ wget https://pjreddie.com/media/files/yolov3.weights` 
+The weights have been trained on the COCO dataset (http://cocodataset.org)
+
+## Live stream object detection example:
+Example streams: Jackson Hole Wyoming USA Live Cams - SeeJH.com
+* https://youtu.be/1EiC9bvVGnk
+* https://youtu.be/RZWzyQuFxgE
