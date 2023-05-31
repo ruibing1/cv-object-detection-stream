@@ -21,3 +21,12 @@ The weights have been trained on the COCO dataset (http://cocodataset.org)
 Example streams: Jackson Hole Wyoming USA Live Cams - SeeJH.com
 * https://youtu.be/1EiC9bvVGnk
 * https://youtu.be/RZWzyQuFxgE
+
+The example was accomplished with confidence level 0.30 and threshold level 0.55.
+
+Screenshots of the sample output:
+
+![](JacksonHole1.jpg)
+![](JacksonHole2.jpg)
+
+This project is maintained by ruibing1.
